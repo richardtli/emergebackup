@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  --interSectionMargin: 100px;
+  --interSectionPadding: 100px;
+  --intraSectionPadding: 50px;
+  --LogoPink: #ff98ff;
+  --LogoBlue: #7ce8ff;
+  --IntroOuterAnimationTime: 5.5s;
+  --IntroOuterAnimationDelay: 1s;
+  --IntroInnerAnimationTime: 6s;
+  --IntroInnerAnimationDelay: 0.5s;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+a:link {
+  text-decoration: none;
+}
+
+.StickyNav {
+  position: fixed;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 100%;
+  background-color: #444;
+  z-index: 3;
+}
+
+.NavElements {
+  font-weight: 700;
+  display: flex;
+  justify-content: end;
+  list-style: none;
+  gap: 50px;
+  margin-right: 50px;
+  font-size: 1rem;
+}
+
+.NavElements > li > a:hover {
+  color: #ccc;
+}
+
+.Intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.IntroTitleText {
+  font-size: min(10rem, 20vw);
+  font-weight: 400;
+  padding-top: 5rem;
+}
+
+.IntroLogo {
+  display: block;
+  width: min(400px, 70vw);
+  overflow: visible;
+}
+path.wire {
+  fill: transparent;
+  stroke: var(--LogoBlue);
+  stroke-width: 15;
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+  animation: wireAnimation var(--IntroInnerAnimationTime) ease-in forwards;
+  animation-delay: var(--IntroInnerAnimationDelay);
+}
+
+@keyframes wireAnimation {
+  0% {
+    fill: transparent;
+    stroke: var(--LogoBlue);
+    stroke-width: 15;
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+    stroke-width: 15;
+    fill: transparent;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 15;
+    fill: var(--LogoBlue);
+  }
+}
+
+path.Wrinkle {
+  fill: transparent;
+  stroke: var(--LogoPink);
+  stroke-width: 5;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: WrinkleAnimation var(--IntroInnerAnimationTime) ease-in forwards;
+  animation-delay: var(--IntroInnerAnimationDelay);
+}
+
+@keyframes WrinkleAnimation {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+  }
+
+  93.33% {
+    fill: transparent;
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    fill: var(--LogoPink);
+    stroke-dashoffset: 0;
+  }
+}
+
+path.RightBrain {
+  fill: transparent;
+  stroke: var(--LogoBlue);
+  stroke-width: 5;
+  stroke-dasharray: 11000;
+  stroke-dashoffset: 11000;
+  animation: RightBrainAnimation var(--IntroOuterAnimationTime) ease-in forwards;
+  animation-delay: var(--IntroOuterAnimationDelay);
+}
+
+@keyframes RightBrainAnimation {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 11000;
+    stroke-dashoffset: 11000;
+  }
+
+  70% {
+    fill: transparent;
+    stroke-dasharray: 11000;
+    stroke-dashoffset: 0;
+  }
+
+  90% {
+    fill: transparent;
+    stroke-dasharray: 11000;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    fill: var(--LogoBlue);
+    stroke-dashoffset: 0;
+  }
+}
+path.LeftBrain {
+  fill: transparent;
+  stroke: var(--LogoPink);
+  stroke-width: 5;
+  stroke-dasharray: 17000;
+  stroke-dashoffset: 17000;
+  animation: LeftBrainAnimation var(--IntroOuterAnimationTime) ease-in forwards;
+  animation-delay: var(--IntroOuterAnimationDelay);
+}
+
+@keyframes LeftBrainAnimation {
+  0% {
+    fill: transparent;
+    stroke-dasharray: 17000;
+    stroke-dashoffset: 17000;
+  }
+
+  60% {
+    fill: transparent;
+    stroke-dasharray: 17000;
+    stroke-dashoffset: 0;
+  }
+
+  90% {
+    fill: transparent;
+    stroke-dasharray: 17000;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    fill: var(--LogoPink);
+    stroke-dashoffset: 0;
+  }
+}
+
+.Spin {
+    animation: PlanetSpin 5s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.Circle1{
+    animation-delay: -0.15s;
+}
+.Circle2{
+    animation-delay: -0.3s;
+}
+.Circle3{
+    animation-delay: -0.45s;
+}
+
+
+
+@keyframes PlanetSpin {
+    0% {
+        transform: RotateY(0);
+    }
+
+    100% {
+        transform: RotateY(1turn);
+    }
+
+}
+
+.IntroSubText {
+  font-size: min(3rem, 7vw);
+  font-weight: 300;
+  padding: 25px 25px 0px 25px;
+  text-align: center;
+}
+
+.About {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--interSectionMargin);
+  padding-top: var(--interSectionPadding);
+  padding-bottom: var(--interSectionPadding);
+  background-color: #2d2d2d;
+}
+
+.AboutTextContainer {
+  border-radius: 25px;
+  width: 50%;
+  background-color: #2d2d2d;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.AboutTextContainer::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 400%;
+  background: linear-gradient(#00ccff, #d400d4);
+
+  animation: OutlineAnimation 10s linear infinite;
+}
+.AboutTextContainer::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background-color: #2d2d2d;
+  border-radius: 22px;
+}
+
+.AIHighlighted {
+  position: relative;
+  font-weight: bold;
+  display: inline-block;
+  background: linear-gradient(to right, #00ccff, var(--LogoPink), #00ccff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  animation: AIHighlightedAnimation 60s linear infinite;
+}
+@keyframes AIHighlightedAnimation{
+  0% {
+    background-position-x: 3000px;
+  }
+
+  100% {
+    background-position-x: 0;
+  }
+}
+
+@keyframes OutlineAnimation {
+  0% {
+    transform: rotate(0turn);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.AboutText {
+  font-size: min(1.5rem, 3vw);
+  z-index: 1;
+}
+
+.PastEventsSection{
+  margin-top: var(--interSectionPadding);
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+/* .PastEventsSection::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150%;
+  height: 200%;
+  background: linear-gradient(#00ccff, #d400d4);
+  animation: OutlineAnimation2 10s linear infinite alternate;
+}
+
+@keyframes OutlineAnimation2 {
+  0% {
+    transform: translate(70%, -70%) rotateZ(45deg);
+  }
+
+  100% {
+    transform:  translate(-70%, 70%) rotateZ(45deg);
+  }
+}
+.PastEventsSection::after {
+  content: "";
+  position: absolute;
+  background-color: #2d2d2d;
+  inset: 5px;
+  border-radius: 22px;
+} */
+
+.PastEventsText{
+  font-size: min(2rem, 5vw);
+  z-index: 4;
+  position: relative;
+}
+
+.PastEventsContainer {
+  padding: var(--intraSectionPadding);
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+
+}
+
+.PastEventBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  z-index: 2;
+}
+
+.PastEventLogo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+
+.Logo2019 {
+  background-image: url("images/2019Logo.png");
+  animation: Steering 10s ease-in-out infinite;
+}
+
+@keyframes Steering {
+  0%{
+    transform: rotateZ(0deg);
+   }
+
+   15% {
+    transform: rotateZ(50deg);
+   }
+
+   30% {
+    transform: rotateZ(0deg);
+   }
+
+   35% {
+    transform: rotateZ(10deg);
+   }
+
+   40% {
+    transform: rotateZ(0deg);
+   }
+
+   60% {
+    transform: rotateZ(-50deg);
+   }
+
+   80% {
+    transform: rotateZ(0deg);
+   }
+
+   90% {
+    transform: rotateZ(-10deg);
+   }
+  
+}
+
+.Logo2021 {
+  /* background-image: url("images/2021Logo.png"); */
+}
+
+.Logo2022 {
+  /* background-image: url("images/2022Logo.png"); */
+}
+
+.Speakers {
+  margin-top: var(--interSectionMargin);
+}
+
+
+@media (max-width: 768px) {
+  .StickyNav {
+    display: none;
+    position: absolute;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+    background-color: #444;
+    z-index: 3;
+  }
+
+  .AboutTextContainer {
+    font-size: 1.5rem;
+    width: 60%;
+    padding: 20px;
+  }
+
+  .AboutTextContainer::after {
+    inset: 3px;
+  }
+ 
+  .AboutText {
+    font-size: 1.3rem;
+
+  }
+  
+  .PastEventsSection{
+
+    padding: 30px;
+  }
+
+  .PastEventsText{
+    font-size: 3rem;
+  }
+  
+  .PastEventsContainer {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .PastEventBox {
+    gap: 10px;
+    font-size: 1.5rem;
+
+  }
+
+  .PastEventLogo {
+    width: 150px;
+    height: 150px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
