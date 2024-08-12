@@ -18,7 +18,7 @@
 }
 
 body {
-  background-color: #1d1d1d;
+  background-color: #151515;
 }
 a:link {
   text-decoration: none;
@@ -55,14 +55,14 @@ a:link {
 }
 
 .IntroTitleText {
-  font-size: min(10rem, 20vw);
+  font-size: min(10rem, 10vw);
   font-weight: 400;
-  padding-top: 5rem;
+  padding-top: 2vh;
 }
 
 .IntroLogo {
   display: block;
-  width: min(400px, 70vw);
+  width: min(350px, 70vw);
   overflow: visible;
 }
 path.wire {
@@ -229,7 +229,7 @@ path.LeftBrain {
   font-weight: 300;
   padding: 25px 25px 0px 25px;
   text-align: center;
-  margin-bottom: var(--interSectionMargin);
+  margin-bottom: 2vh
 }
 
 .About {
@@ -476,6 +476,19 @@ path.LeftBrain {
     width: 150px;
     height: 150px;
   }
+
+  .IntroSubText {
+    margin-bottom: var(--interSectionMargin);
+    font-size: min(3rem, 8vw);
+
+  }
+
+  .IntroTitleText {
+    font-size: min(10rem, 20vw);
+    font-weight: 400;
+    padding-top: 5vh;
+  }
+  
 
 }
 
